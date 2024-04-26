@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog de Jorge</title>
+    <link rel='stylesheet' href='/public/stylesheets/style.css' />
+</head>
+<body>
+    <br>
+
+    <table>
+        <tr>
+            <td >
+                <% include ../_attachment %>
+
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p s></p> Post id: <%= post.id %> - <b><%= post.title %></b> </p>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <p > <%= post.body %> </p>
+            </td>
+        </tr>              
+    </table>
+    <a href="/posts" id="boton">Volver atrás</a>
+    <a href="/posts/<%= post.id %>/attachment" id="boton">Ver Adjunto</a>
+</body>
+</html>
+
+    

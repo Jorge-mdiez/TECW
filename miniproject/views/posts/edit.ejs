@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog de Jorge</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1 class="edit-post-title">
+        Editar Post:
+    </h1>
+    
+    <div class="edit-form">
+        <form method="post" action="/posts/<%= post.id %>?_method=PUT" enctype="multipart/form-data">
+            <%- include('_form.ejs') %>
+        </form>
+    </div>
+    </body>
+    </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog de Jorge</title>
+    <link rel='stylesheet' href='/public/stylesheets/style.css'/>
+</head>
+<body>
+<h1>Lista de posts:</h1>
+<table>
+    <% for (let post of posts) { %>
+        <tr>
+            <td>
+                <%= post.id %>
+            </td>
+            <td>
+                <%= post.title %>
+            </td>
+            <td>
+                <a href="/posts/<%= post.id %>" id="boton_post">Ver Post</a>
+            </td>
+            <td>
+                <a href="/posts/<%= post.id %>/edit" id="boton_post">Editar Post</a>
+            </td>
+            <td>
+                <a href="/posts/<%= post.id %>?_method=DELETE" id="rojo"
+                   onClick="return confirm('¿Seguro que quiere borrar el post  <%= post.id %>?');"
+                   >Borrar</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<a href="/posts/new" id="boton">Crear nuevo post</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+'use strict';
+
+/** @type {import('sequelize-cli).Migration} */
+
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('Posts', [
+      { title: 'Primer Post',
+      body: 'Esta práctica implementa un Blog.',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      attachmentId: null
+      },
+      { title: 'Segundo Post',
+      body: 'Todo el mundo puede crear posts.',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      attachmentId: null
+      },
+      { title: 'Tercer Post',
+      body: 'Cada post puede tener una imagen adjunta.',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      attachmentId: null
+      }
+    ]);
+  },
+    down: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkDelete('Posts', null, {});
+  }
+};
